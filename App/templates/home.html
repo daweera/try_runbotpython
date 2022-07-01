@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+<!-- Navbar content-->
+{% block navbar-content %}
+<i style="color: yellowgreen;" class="fas fa-user-alt"></i>&nbsp;&nbsp; LineUsers List {% endblock navbar-content %}
+
+
+<!-- Page Content  -->
+{% block content %}
+<div class="container">
+    <br><br><br>
+
+    <table class="table table-bordered" id="example" style="text-align: center;">
+        <thead class="table-success">
+            <tr>
+                <th style="width: 5;">ID</th>
+                <th style="width: 30;">Name</th>
+                <th style="width: 30;">Email</th>
+                <th style="width: 25;">Occupation</th>
+                <th style="width: 5;">Salary</th>
+                <th style="width: 5;">Gender</th>
+            </tr>
+        </thead>
+        <!-- Data from backend-->
+        {% for employee in employees %}
+        <tr>
+            <tr>{{ employee.id }}</tr>
+            <tr>{{ employee.name }}</tr>
+            <tr>{{ employee.email }}</tr>
+            <tr>{{ employee.occupation }}</tr>
+            <tr>{{ employee.salary }}</tr>
+            <tr>{{ employee.gender }}</tr>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</div>
+<!--END// container -->
+
+<br><br><br><br> {% endblock content %}
